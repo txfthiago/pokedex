@@ -1,4 +1,10 @@
-*{
+@import "../src/pages/main.css";
+html,
+body {
+  overflow-x: hidden;
+}
+
+* {
   margin: 0;
   padding: 0;
   border: 0;

@@ -1,12 +1,28 @@
+@import "../modalDetails/main.css";
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Storm&display=swap");
 
-.card{
-    margin: 20px;
-   max-width: 20rem;
-   padding: 1rem;
-   transition:all 2s;
-
+.card {
+  margin: 20px;
+  max-width: 20rem;
+  padding: 1rem;
+  transition: 0.7s !important;
+  border-radius: 8px !important;
+  font-family: 'Rubik Storm', cursive !important;
 }
 
-.card:hover{
-    transform: scale(1.1);
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card-media {
+  border: 1px solid black !important;
+  border-radius: 10px;
+}
+
+.content-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
 }

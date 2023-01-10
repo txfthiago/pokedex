@@ -1,0 +1,21 @@
+@import'../components/navBar/main.css';
+@import '../components/card/main.css';
+
+
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #000000, #eeff06); 
+    }
+    
+      .card-container{
+       
+      width: 70%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+      }    

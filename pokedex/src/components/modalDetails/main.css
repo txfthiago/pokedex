@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap');
+
+.containerModal {
+  display: flex;
+  flex-direction: column;
+  width: 50% !important;
+  color: white;
+  border-radius: 20px;
+  font-family: 'Signika Negative', sans-serif;
+  background: linear-gradient(to bottom, #000000, #eeff06);
+  padding: 0;
+margin: 0;
+  box-shadow: 1px 0px 50px 0px rgba(138,242,0,0.91) inset !important;
+-webkit-box-shadow: 1px 0px 50px 0px rgba(138,242,0,0.91) inset !important;
+-moz-box-shadow: 1px 0px 50px 0px rgba(138,242,0,0.91) inset !important;
+padding: 2.4rem !important;
+
+}
+.pokeImg {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2rem;
+ border: 7px solid black;
+ border-radius: 20px;
+ margin-bottom: 1rem;
+ 
+}
+
+.pokeImg img{
+    max-height: 30rem;
+}
+
+.charContainer {
+  display: flex;
+  gap: 4rem;
+  align-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  color: black;
+  margin: 1rem;
+}
+.charContainer ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}

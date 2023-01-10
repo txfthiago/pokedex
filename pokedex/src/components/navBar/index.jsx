@@ -4,11 +4,10 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
+import { Button } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 import MenuIcon from "@mui/icons-material/Menu";
-import SearchIcon from "@mui/icons-material/Search";
 import Logo from "../../assets/pokeLogo.png";
-import { display } from "@mui/system";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -23,16 +22,6 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(1),
     width: "auto",
   },
-}));
-
-const SearchIconWrapper = styled("div")(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: "100%",
-  position: "absolute",
-  pointerEvents: "none",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-around",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -52,11 +41,23 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar({ onSearchValueChange, handlePokemonSearch }) {
+  const handleSearchInputChange = (event) => {
+    onSearchValueChange(event.target.value);
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar className="container" position="static">
-        <Toolbar>
+      <AppBar position="static">
+        <Toolbar
+          className="container"
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row",
+            padding: "0 10rem"
+          }}
+        >
           <IconButton
             size="large"
             edge="start"
@@ -66,16 +67,21 @@ export default function NavBar() {
           >
             <MenuIcon />
           </IconButton>
-          <img src={Logo} style={{maxWidth: '9rem', margin: '0 60vh'}} />
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
+
+          <img src={Logo} style={{ maxWidth: "9rem", margin: "0 60vh" }} />
+
+          <div className="content">
+            <Search onChange={handleSearchInputChange}>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+
+            <Button variant="contained" onClick={handlePokemonSearch}>
+              Pesquisar
+            </Button>
+          </div>
         </Toolbar>
       </AppBar>
     </Box>
